@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="个人财务分配管理系统 v1.0"
+        android:textSize="18sp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_salary_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="薪资入账分解" />
+
+    <Button
+        android:id="@+id/btn_manual_change_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手动调整账目" />
+
+    <Button
+        android:id="@+id/btn_check_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看账户余额" />
+
+    <Button
+        android:id="@+id/btn_check_salary_sort_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看薪资分解记录" />
+
+    <Button
+        android:id="@+id/btn_check_balance_change_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看账目更改记录" />
+
+</LinearLayout>
