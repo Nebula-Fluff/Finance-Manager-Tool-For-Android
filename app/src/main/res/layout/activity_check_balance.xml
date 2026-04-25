@@ -8,8 +8,165 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测试页-3"
+        android:text="账目余额查询"
         android:textSize="18sp"
+        android:paddingTop="24dp"
         android:paddingBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Security fund："
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/security_fund_value"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/security_fund_percent"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Emergency fund："
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/emergency_fund_value"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/emergency_fund_percent"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Health fund："
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/health_fund_value"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/health_fund_percent"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Overflow fund："
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/overflow_value"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Flex fund："
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/flex_fund_value"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </LinearLayout>
