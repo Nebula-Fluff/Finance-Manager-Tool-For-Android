@@ -24,8 +24,8 @@ public class ManualChangeBalanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manual_change_balance);
 
         // ID绑定
-        accountInput = findViewById(R.id.account_input);
-        amountInput = findViewById(R.id.amount_input);
+        accountInput = findViewById(R.id.et_account_input);
+        amountInput = findViewById(R.id.et_amount_input);
         btnChangeBalance = findViewById(R.id.btn_change_balance);
 
         // 设置按钮点击事件

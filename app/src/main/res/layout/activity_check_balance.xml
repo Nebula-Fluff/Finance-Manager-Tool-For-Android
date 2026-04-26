@@ -25,7 +25,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/security_fund_value"
+            android:id="@+id/tv_security_fund_value"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="N/A"
@@ -38,7 +38,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/security_fund_percent"
+            android:id="@+id/tv_security_fund_percent"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:text="000"
@@ -64,7 +64,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/emergency_fund_value"
+            android:id="@+id/tv_emergency_fund_value"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="N/A"
@@ -77,7 +77,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/emergency_fund_percent"
+            android:id="@+id/tv_emergency_fund_percent"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:text="000"
@@ -103,7 +103,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/health_fund_value"
+            android:id="@+id/tv_health_fund_value"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="N/A"
@@ -116,7 +116,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/health_fund_percent"
+            android:id="@+id/tv_health_fund_percent"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:text="000"
@@ -142,7 +142,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/overflow_value"
+            android:id="@+id/tv_overflow_value"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="N/A"
@@ -162,7 +162,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/flex_fund_value"
+            android:id="@+id/tv_flex_fund_value"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="N/A"

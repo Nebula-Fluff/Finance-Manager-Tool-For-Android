@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceManagerTool">
         <activity
+            android:name=".BalanceLogDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckBalanceChangeLogActivity"
             android:exported="false" />
         <activity

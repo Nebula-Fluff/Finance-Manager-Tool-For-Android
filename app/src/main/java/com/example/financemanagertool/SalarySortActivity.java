@@ -11,7 +11,7 @@ public class SalarySortActivity extends AppCompatActivity {
 
     // 声明控件变量
     Button btnStartSalarySort;
-    EditText salaryInput;
+    EditText etSalaryInput;
 
 
     @Override
@@ -21,11 +21,11 @@ public class SalarySortActivity extends AppCompatActivity {
 
         // ID绑定
         btnStartSalarySort = findViewById(R.id.btn_start_salary_sort);
-        salaryInput = findViewById(R.id.salary_input);
+        etSalaryInput = findViewById(R.id.et_salary_input);
 
         // 设置按钮点击事件
         btnStartSalarySort.setOnClickListener(v -> {
-            String salary = salaryInput.getText().toString();
+            String salary = etSalaryInput.getText().toString();
             // 显示Toast提示
             Toast.makeText(this, "操作成功（开发中）", Toast.LENGTH_SHORT).show();
             // 关闭当前Activity

@@ -26,13 +26,13 @@ public class CheckBalanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_check_balance);
 
         // ID绑定
-        securityFundValue = findViewById(R.id.security_fund_value);
-        securityFundPercent = findViewById(R.id.security_fund_percent);
-        emergencyFundValue = findViewById(R.id.emergency_fund_value);
-        emergencyFundPercent = findViewById(R.id.emergency_fund_percent);
-        healthFundValue = findViewById(R.id.health_fund_value);
-        overflowValue = findViewById(R.id.overflow_value);
-        flexValue = findViewById(R.id.flex_fund_value);
+        securityFundValue = findViewById(R.id.tv_security_fund_value);
+        securityFundPercent = findViewById(R.id.tv_security_fund_percent);
+        emergencyFundValue = findViewById(R.id.tv_emergency_fund_value);
+        emergencyFundPercent = findViewById(R.id.tv_emergency_fund_percent);
+        healthFundValue = findViewById(R.id.tv_health_fund_value);
+        overflowValue = findViewById(R.id.tv_overflow_value);
+        flexValue = findViewById(R.id.tv_flex_fund_value);
 
     }
 }
