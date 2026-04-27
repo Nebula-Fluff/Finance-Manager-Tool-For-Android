@@ -24,12 +24,14 @@ public class BalanceLogDetailActivity extends AppCompatActivity {
         String receivedChange = getIntent().getStringExtra("row_change");
         String receivedRemark = getIntent().getStringExtra("row_remark");
 
+        // 将接收到的数据显示在对应的TextView中
         TextView tvReceivedId = findViewById(R.id.tv_id_value);
         TextView tvReceivedDate = findViewById(R.id.tv_date_value);
         TextView tvReceivedAccount = findViewById(R.id.tv_account);
         TextView tvReceivedChange = findViewById(R.id.tv_change_value);
         TextView tvReceivedRemark = findViewById(R.id.tv_remark);
 
+        // 设置TextView的文本内容
         tvReceivedId.setText(receivedId);
         tvReceivedDate.setText(receivedDate);
         tvReceivedAccount.setText(receivedAccount);
