@@ -1,11 +1,8 @@
 package com.example.financemanagertool;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.EditText;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnCheckBalance;
     Button btnCheckSalarySortLog;
     Button btnCheckBalanceChangeLog;
-
+    Button btnDataIOFunc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnCheckBalance = findViewById(R.id.btn_check_balance);
         btnCheckSalarySortLog = findViewById(R.id.btn_check_salary_sort_log);
         btnCheckBalanceChangeLog = findViewById(R.id.btn_check_balance_change_log);
+        btnDataIOFunc = findViewById(R.id.btn_data_io_func);
 
         // 设置按钮点击事件
         btnSalarySort.setOnClickListener(v -> {
@@ -54,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
         btnCheckBalanceChangeLog.setOnClickListener(v -> {
             Intent checkDataBase = new Intent(this, CheckBalanceChangeLogActivity.class);
             startActivity(checkDataBase);
+        });
+
+        btnDataIOFunc.setOnClickListener(v -> {
+            Intent dataIOFuncActivity = new Intent(this, DataIOFuncActivity.class);
+            startActivity(dataIOFuncActivity);
         });
     }
 }

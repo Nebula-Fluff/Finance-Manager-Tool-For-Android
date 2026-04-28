@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceManagerTool">
         <activity
+            android:name=".DataIOFuncActivity"
+            android:exported="false" />
+        <activity
             android:name=".SalarySortLogDetailActivity"
             android:exported="false" />
         <activity

@@ -43,4 +43,10 @@
         android:layout_height="wrap_content"
         android:text="查看账目更改记录" />
 
+    <Button
+        android:id="@+id/btn_data_io_func"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数据导入导出" />
+
 </LinearLayout>
