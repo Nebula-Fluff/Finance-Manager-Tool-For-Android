@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ConfigManager.init(this);
 
         // ID绑定
         btnSalarySort = findViewById(R.id.btn_salary_sort);

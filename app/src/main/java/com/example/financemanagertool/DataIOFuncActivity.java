@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.OpenableColumns;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,8 @@ public class DataIOFuncActivity extends AppCompatActivity {
     Button btnImportDB;
     Button btnExportJson;
     Button btnExportDB;
+    Button btnReloadConfig;
+    Button btnTestConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +37,18 @@ public class DataIOFuncActivity extends AppCompatActivity {
         btnImportDB = findViewById(R.id.btn_import_db);
         btnExportJson = findViewById(R.id.btn_export_json);
         btnExportDB = findViewById(R.id.btn_export_db);
+        btnReloadConfig = findViewById(R.id.btn_reload_config);
+        btnTestConfig = findViewById(R.id.btn_test_config);
 
         btnImportJson.setOnClickListener(v -> openFilePicker(PICK_JSON_FILE));
         btnImportDB.setOnClickListener(v -> openFilePicker(PICK_DB_FILE));
         btnExportJson.setOnClickListener(v -> exportFile("config.json"));
         btnExportDB.setOnClickListener(v -> exportFile("finance.db"));
+        btnReloadConfig.setOnClickListener(v -> {
+            ConfigManager.init(this);
+            Toast.makeText(this, "配置已重新读取", Toast.LENGTH_SHORT).show();
+        });
+        btnTestConfig.setOnClickListener(v -> Log.d("ConfigManager", "data内容: " + ConfigManager.data.toString()));
     }
 
     private void openFilePicker(int requestCode) {

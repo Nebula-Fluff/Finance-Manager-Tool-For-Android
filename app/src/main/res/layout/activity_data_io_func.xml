@@ -61,4 +61,19 @@
             android:text="导出db" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="30dp"/>
+
+    <Button
+        android:id="@+id/btn_reload_config"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加载配置"/>
+
+    <Button
+        android:id="@+id/btn_test_config"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调试内容"/>
 </LinearLayout>
