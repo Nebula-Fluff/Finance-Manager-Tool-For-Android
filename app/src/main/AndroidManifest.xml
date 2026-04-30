@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceManagerTool">
         <activity
+            android:name=".FuncTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FunTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".DataIOFuncActivity"
             android:exported="false" />
         <activity

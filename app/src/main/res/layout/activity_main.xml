@@ -49,4 +49,10 @@
         android:layout_height="wrap_content"
         android:text="数据导入导出" />
 
+    <Button
+        android:id="@+id/btn_func_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="功能测试" />
+
 </LinearLayout>
