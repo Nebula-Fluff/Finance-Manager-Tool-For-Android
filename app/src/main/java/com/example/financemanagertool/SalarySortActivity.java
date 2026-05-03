@@ -9,27 +9,44 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SalarySortActivity extends AppCompatActivity {
 
-    // 声明控件变量
     Button btnStartSalarySort;
     EditText etSalaryInput;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salary_sort);
 
-        // ID绑定
         btnStartSalarySort = findViewById(R.id.btn_start_salary_sort);
         etSalaryInput = findViewById(R.id.et_salary_input);
 
-        // 设置按钮点击事件
         btnStartSalarySort.setOnClickListener(v -> {
-            String salary = etSalaryInput.getText().toString();
-            // 显示Toast提示
-            Toast.makeText(this, "操作成功（开发中）", Toast.LENGTH_SHORT).show();
-            // 关闭当前Activity
-            finish();
+            String salary = etSalaryInput.getText().toString().trim();
+
+            // 判断输入是否为空
+            if (salary.isEmpty()) {
+                Toast.makeText(this, "请输入薪资", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // 判断输入是否为合法数字
+            try {
+                new java.math.BigDecimal(salary);
+            } catch (Exception e) {
+                Toast.makeText(this, "请输入正确的金额格式", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // 调用 FinanceManager 执行入账
+            FinanceManager manager = new FinanceManager(this);
+            boolean success = manager.salarySortAndWrite(salary);
+
+            if (success) {
+                Toast.makeText(this, "入账成功", Toast.LENGTH_SHORT).show();
+                finish();
+            } else {
+                Toast.makeText(this, "入账失败，请检查数据", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

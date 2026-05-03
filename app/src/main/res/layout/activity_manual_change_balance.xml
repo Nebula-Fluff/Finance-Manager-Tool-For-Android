@@ -13,25 +13,31 @@
         android:paddingTop="24dp"
         android:paddingBottom="16dp"/>
 
-    <EditText
-        android:id="@+id/et_account_input"
+    <!-- 账户选择，点击弹出选择框 -->
+    <TextView
+        android:id="@+id/tv_account_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="输入账目"
-        android:paddingBottom="16dp"/>
+        android:text="点击选择账户"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/edit_text"/>
 
     <EditText
         android:id="@+id/et_amount_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="输入金额"
+        android:hint="输入金额（正数为加，负数为减）"
+        android:inputType="numberDecimal|numberSigned"
         android:paddingBottom="16dp"/>
 
     <EditText
         android:id="@+id/et_remark_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="输入备注"/>
+        android:hint="输入备注（不能为空）"
+        android:paddingBottom="16dp"/>
 
     <Button
         android:id="@+id/btn_change_balance"

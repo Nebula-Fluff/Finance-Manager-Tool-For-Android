@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnCheckSalarySortLog;
     Button btnCheckBalanceChangeLog;
     Button btnDataIOFunc;
-    Button btnFuncTest;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         btnCheckSalarySortLog = findViewById(R.id.btn_check_salary_sort_log);
         btnCheckBalanceChangeLog = findViewById(R.id.btn_check_balance_change_log);
         btnDataIOFunc = findViewById(R.id.btn_data_io_func);
-        btnFuncTest = findViewById(R.id.btn_func_test);
 
         // 设置按钮点击事件
         btnSalarySort.setOnClickListener(v -> {
@@ -61,11 +58,6 @@ public class MainActivity extends AppCompatActivity {
         btnDataIOFunc.setOnClickListener(v -> {
             Intent dataIOFuncActivity = new Intent(this, DataIOFuncActivity.class);
             startActivity(dataIOFuncActivity);
-        });
-
-        btnFuncTest.setOnClickListener(v -> {
-            Intent funcTestActivity = new Intent(this, FuncTestActivity.class);
-            startActivity(funcTestActivity);
         });
     }
 }

@@ -1,53 +1,86 @@
 package com.example.financemanagertool;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import androidx.activity.EdgeToEdge;
+import java.util.Map;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class ManualChangeBalanceActivity extends AppCompatActivity {
 
-    // 声明控件变量
-    TextView accountInput;
-    TextView amountInput;
-    TextView remarkInput;
+    TextView tvAccountInput;
+    EditText etAmountInput;
+    EditText etRemarkInput;
     Button btnChangeBalance;
+
+    String selectedAccount = null; // 记录用户选了哪个账户
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_change_balance);
 
-        // ID绑定
-        accountInput = findViewById(R.id.et_account_input);
-        amountInput = findViewById(R.id.et_amount_input);
-        remarkInput = findViewById(R.id.et_remark_input);
+        tvAccountInput = findViewById(R.id.tv_account_input);
+        etAmountInput = findViewById(R.id.et_amount_input);
+        etRemarkInput = findViewById(R.id.et_remark_input);
         btnChangeBalance = findViewById(R.id.btn_change_balance);
 
-        // 设置按钮点击事件
+        // 从数据库取账户列表
+        FinanceDB db = new FinanceDB(this);
+        Map<String, String> balances = db.getBalances();
+        String[] accounts = balances.keySet().toArray(new String[0]);
+
+        // 点击账户框弹出选择
+        tvAccountInput.setOnClickListener(v -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("选择账户")
+                    .setItems(accounts, (dialog, which) -> {
+                        selectedAccount = accounts[which];
+                        tvAccountInput.setText(selectedAccount);
+                    })
+                    .show();
+        });
+
+        // 提交按钮
         btnChangeBalance.setOnClickListener(v -> {
-            // 未完善，待开发
-            String account = accountInput.getText().toString();
-            String amount = amountInput.getText().toString();
-            String remark = remarkInput.getText().toString();
+            String amount = etAmountInput.getText().toString().trim();
+            String remark = etRemarkInput.getText().toString().trim();
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            String date = sdf.format(new Date());
+            // 校验
+            if (selectedAccount == null) {
+                Toast.makeText(this, "请选择账户", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (amount.isEmpty()) {
+                Toast.makeText(this, "请输入金额", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (remark.isEmpty()) {
+                Toast.makeText(this, "备注不能为空", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            try {
+                new java.math.BigDecimal(amount);
+            } catch (Exception e) {
+                Toast.makeText(this, "金额格式有误", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-            FinanceDB db = new FinanceDB(this);
-            db.changeBalance(account, amount, date, remark);
-            // 显示Toast提示
-            Toast.makeText(this, "操作成功（开发中）", Toast.LENGTH_SHORT).show();
-            // 关闭当前Activity
-            finish();
+            String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+            boolean success = db.changeBalance(selectedAccount, amount, date, remark);
+
+            if (success) {
+                Toast.makeText(this, "操作成功", Toast.LENGTH_SHORT).show();
+                finish();
+            } else {
+                Toast.makeText(this, "操作失败", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
