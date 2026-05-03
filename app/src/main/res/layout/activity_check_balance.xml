@@ -39,17 +39,10 @@
 
         <TextView
             android:id="@+id/tv_security_fund_percent"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="000"
+            android:text="0.0%"
             android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="12dp"
-            android:layout_height="wrap_content"
-            android:text="%"
-            android:textSize="18sp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -78,17 +71,10 @@
 
         <TextView
             android:id="@+id/tv_emergency_fund_percent"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="000"
+            android:text="0.0%"
             android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="12dp"
-            android:layout_height="wrap_content"
-            android:text="%"
-            android:textSize="18sp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -117,17 +103,10 @@
 
         <TextView
             android:id="@+id/tv_health_fund_percent"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="000"
+            android:text="0.0%"
             android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="12dp"
-            android:layout_height="wrap_content"
-            android:text="%"
-            android:textSize="18sp" />
-
     </LinearLayout>
 
     <LinearLayout

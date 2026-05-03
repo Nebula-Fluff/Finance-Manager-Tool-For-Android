@@ -1,12 +1,13 @@
 package com.example.financemanagertool;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FuncTestActivity extends AppCompatActivity {
@@ -29,10 +30,25 @@ public class FuncTestActivity extends AppCompatActivity {
         btnTest2 = findViewById(R.id.btn_test2);
 
         btnTest1.setOnClickListener(v -> {
-            Toast.makeText(this, "Data:" + FinanceDB.getBalances().toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Data:" + FinanceDB.getBalances().toString(), Toast.LENGTH_SHORT).show();
+            FinanceDB.changeBalance("Flex", "5678", "2026-05-03", "test test test");
+            Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
         });
         btnTest2.setOnClickListener(v -> {
-            Toast.makeText(this, "Data:" + balances.get("Security"), Toast.LENGTH_SHORT).show();
+            List<String[]> rows = FinanceDB.getTransactionsLog();
+            List<Map<String, String>> result = new ArrayList<>();
+
+            for (String[] row : rows) {
+                Map<String, String> map = new LinkedHashMap<>();
+                map.put("ID", row[0]);
+                map.put("date", row[1]);
+                map.put("account", row[2]);
+                map.put("change_num", row[3]);
+                map.put("remark", row[4]);
+                result.add(map);
+            }
+
+            Toast.makeText(this, result.toString(), Toast.LENGTH_LONG).show();
         });
     }
 }

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CheckSalarySortLogActivity extends AppCompatActivity {
@@ -15,12 +14,12 @@ public class CheckSalarySortLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_salary_sort_log);
 
+        FinanceDB db = new FinanceDB(this);
+
         RecyclerView rv = findViewById(R.id.rv_table);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        List<String[]> data = new ArrayList<>();
-        data.add(new String[]{"1", "2026-04-26", "3500", "500", "510", "520", "530", "540", ">3000", "0.35", "15", "7", "30"});
-        data.add(new String[]{"2", "2026-04-26", "3500", "600", "610", "620", "630", "640", ">3000", "0.35", "15", "7", "30"});
+        List<String[]> data = db.getSalaryLog();
 
         SalarySortLogAdapter adapter = new SalarySortLogAdapter(data, row -> {
             Intent intent = new Intent(this, SalarySortLogDetailActivity.class);
